@@ -49,9 +49,7 @@ import static io.grpc.internal.GrpcUtil.CONTENT_TYPE_GRPC;
 import static io.grpc.internal.GrpcUtil.CONTENT_TYPE_KEY;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
-import static java.util.Arrays.copyOfRange;
-
-import static jakarta.xml.bind.DatatypeConverter.printHexBinary;
+import java.util.HexFormat;
 
 final class ServletServerStream extends AbstractServerStream {
 
@@ -321,14 +319,16 @@ final class ServletServerStream extends AbstractServerStream {
     }
   }
 
+  private static final HexFormat HEX = HexFormat.of().withUpperCase();
+
   static String toHexString(byte[] bytes, int length) {
-    String hex = printHexBinary(copyOfRange(bytes, 0, min(length, 64)));
+    String hex = HEX.formatHex(bytes, 0, min(length, 64));
     if (length > 80) {
       hex += "...";
     }
     if (length > 64) {
       int offset = max(64, length - 16);
-      hex += printHexBinary(copyOfRange(bytes, offset, length));
+      hex += HEX.formatHex(bytes, offset, Math.min(length, bytes.length));
     }
     return hex;
   }
