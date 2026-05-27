@@ -59,7 +59,8 @@
         <grpc.version>1.45.0</grpc.version>
         <protobuf.version>3.19.4</protobuf.version>
         <payara.version>7.2026.5</payara.version>
-        <payara.internal.version>7.0.0.Alpha1</payara.internal.version>
+        <payara-nexus-staging.repo.releases.enabled>false</payara-nexus-staging.repo.releases.enabled>
+        <payara-nexus-staging.repo.snapshots.enabled>false</payara-nexus-staging.repo.snapshots.enabled>
     </properties>
 
     <licenses>
