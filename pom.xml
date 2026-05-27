@@ -58,8 +58,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <grpc.version>1.45.0</grpc.version>
         <protobuf.version>3.19.4</protobuf.version>
-        <payara.version>6.2022.1.Alpha2</payara.version>
-        <payara.internal.version>6.2022.1.Alpha2</payara.internal.version>
+        <payara.version>6.2022.1.Alpha4</payara.version>
+        <payara.internal.version>6.2022.1.Alpha4</payara.internal.version>
     </properties>
 
     <licenses>
@@ -96,6 +96,21 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>payara-nexus-artifacts</id>
+            <url>https://nexus.payara.fish/repository/payara-artifacts/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>payara-nexus-community</id>
+            <url>https://nexus.payara.fish/repository/payara-community/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
 
     <modules>
         <module>grpc-support</module>
