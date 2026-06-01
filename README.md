@@ -1,5 +1,8 @@
 # Payara gRPC implementation
 
+## ARCHIVED
+This has been moved into the Payara Enterprise codebase and will no longer be maintained here
+
 This is the repo for the Payara gRPC implementation. To use gRPC follow the next steps:
 
 To use the gRPC implementation you must build the current project:
